@@ -14,16 +14,10 @@ function App() {
     <BrowserRouter>
       <div className="App">
         <Routes>
-          <Route path="/" element={<PrivateRouter user={user} />}>
-            <Route
-              path=""
-              element={
-                <Home>
-                  <Route path="about" element={<AboutInfo></AboutInfo>} />
-                  <Route path="logout" element={<Logout></Logout>}></Route>
-                </Home>
-              }
-            />
+          <Route path="/" element={<PrivateRouter user={user} />}></Route>
+          <Route path="/home" element={<Home></Home>}>
+            <Route path="about" element={<AboutInfo></AboutInfo>} />
+            <Route path="logout" element={<Logout></Logout>}></Route>
           </Route>
           <Route
             path="/login"

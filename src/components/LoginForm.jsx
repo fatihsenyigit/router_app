@@ -10,7 +10,7 @@ const LoginForm = ({setUser}) => {
   const handleSubmit = (e) => {
     e.preventDefault();
     setUser(true);
-    navigate("/");
+    navigate("/home");
   };
 
   return (

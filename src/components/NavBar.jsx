@@ -14,10 +14,10 @@ const NavBar = () => {
             </NavLink>
           </div>
           <div  className="d-flex me-3 text-decoration-none">
-            <NavLink to={'/about'} className=" ms-3 text-white text-decoration-none fs-3">
+            <NavLink to={'/home/about'} className=" ms-3 text-white text-decoration-none fs-3">
               About
             </NavLink>
-            <NavLink to={'/logout'} className=" ms-3 text-white text-decoration-none fs-3">
+            <NavLink to={'/home/logout'} className=" ms-3 text-white text-decoration-none fs-3">
               Logout
             </NavLink>
           </div>
