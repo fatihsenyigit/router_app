@@ -17,7 +17,10 @@ function App() {
           <Route path="/" element={<PrivateRouter user={user} />}></Route>
           <Route path="/home" element={<Home></Home>}>
             <Route path="about" element={<AboutInfo></AboutInfo>} />
-            <Route path="logout" element={<Logout></Logout>}></Route>
+            <Route
+              path="logout"
+              element={<Logout setUser={setUser}></Logout>}
+            ></Route>
           </Route>
           <Route
             path="/login"
