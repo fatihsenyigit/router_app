@@ -14,8 +14,7 @@ const Home = () => {
   const [followers, setFollowers] = useState();
   const [activePage, setActivePage] = useState(1);
   const [searchData, setSearchData] = useState("");
-  // const [showFollowers, setShowFollowers] = useState();
-  const perPage = 6;
+  const perPage = 10;
   const startIndex = (activePage - 1) * perPage;
 
   const totalPages =
@@ -29,8 +28,6 @@ const Home = () => {
 
   console.log(totalPages);
 
-  // const totalPages = Math.ceil(followers?.length / perPage);
-
   const showFollowers =
     searchData.trim() === ""
       ? followers?.slice(startIndex, startIndex + perPage)
@@ -39,8 +36,6 @@ const Home = () => {
             e.login.toLowerCase().includes(searchData.trim().toLowerCase()),
           )
           .slice(startIndex, startIndex + perPage);
-
-  // const showFollowers = followers?.slice(startIndex, startIndex + perPage);
 
   function getFollowers() {
     setIsLoading(true);
@@ -65,7 +60,6 @@ const Home = () => {
   return (
     <div>
       <NavBar />
-      <Outlet></Outlet>
       {isLoading ? (
         <div>
           <img src={loading} alt="loading" style={{ width: "200px" }} />

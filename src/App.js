@@ -1,13 +1,12 @@
-
-import { BrowserRouter, Routes, Route } from 'react-router-dom';
-import './App.css';
-import LoginForm from './components/LoginForm';
-import Home from './page/Home';
-import AboutInfo from './components/AboutInfo';
-import PrivateRouter from './page/PrivateRouter';
-import Logout from './components/Logout';
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import "./App.css";
+import LoginForm from "./components/LoginForm";
+import Home from "./page/Home";
+import AboutInfo from "./page/AboutInfo";
+import PrivateRouter from "./page/PrivateRouter";
+import Logout from "./page/Logout";
 import { useState } from "react";
-import NotFound from './components/NotFound'
+import NotFound from "./components/NotFound";
 function App() {
   const [user, setUser] = useState(false);
   return (
@@ -15,13 +14,12 @@ function App() {
       <div className="App">
         <Routes>
           <Route path="/" element={<PrivateRouter user={user} />}></Route>
-          <Route path="/home" element={<Home></Home>}>
-            <Route path="about" element={<AboutInfo></AboutInfo>} />
-            <Route
-              path="logout"
-              element={<Logout setUser={setUser}></Logout>}
-            ></Route>
-          </Route>
+          <Route path="/home" element={<Home></Home>}></Route>
+          <Route path="/about" element={<AboutInfo></AboutInfo>} />
+          <Route
+            path="/logout"
+            element={<Logout setUser={setUser}></Logout>}
+          ></Route>
           <Route
             path="/login"
             element={<LoginForm setUser={setUser}></LoginForm>}
